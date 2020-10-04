@@ -1,0 +1,161 @@
+login as: delamran
+Pre-authentication banner message from server:
+| Access to Brooklyn College computers is restricted to authorized users
+|         and approved educational and research purposes, only.
+End of banner message from server
+delamran@146.245.252.28's password:
+Last login: Wed Sep 23 17:10:39 2020 from ool-45700017.dyn.optonline.net
+[delamran@sol28 ~]$ ls
+example      MyCalendars   scriptForTop20song.sh  top20songs1.csv
+imageFolder  myscript.exe  songs.csv              top20songs.csv
+log          public_html   songsReport.csv
+[delamran@sol28 ~]$ git help
+usage: git [--version] [--help] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty Git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and merge with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+[delamran@sol28 ~]$ q
+bash: q: command not found...
+[delamran@sol28 ~]$ ls
+example      MyCalendars   scriptForTop20song.sh  top20songs1.csv
+imageFolder  myscript.exe  songs.csv              top20songs.csv
+log          public_html   songsReport.csv
+[delamran@sol28 ~]$ cd example
+[delamran@sol28 example]$ ls
+HelloWorld.class  HelloWorld.java  myscript.sh
+[delamran@sol28 example]$ vim HelloWorld.java
+[delamran@sol28 example]$ ls
+HelloWorld.class  HelloWorld.java  myscript.sh
+[delamran@sol28 example]$ cd ..
+[delamran@sol28 ~]$ ls
+example      MyCalendars   scriptForTop20song.sh  top20songs1.csv
+imageFolder  myscript.exe  songs.csv              top20songs.csv
+log          public_html   songsReport.csv
+[delamran@sol28 ~]$ git status
+fatal: Not a git repository (or any parent up to mount point /users1)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[delamran@sol28 ~]$ git init Repo1
+Initialized empty Git repository in /users1/st/delamran/Repo1/.git/
+[delamran@sol28 ~]$ cd Repo1
+[delamran@sol28 Repo1]$ ld
+ld: no input files
+[delamran@sol28 Repo1]$ ls
+[delamran@sol28 Repo1]$ ls -al
+total 12
+drwxr-xr-x.  3 delamran cis 4096 Oct  4 18:00 .
+drwx--x--x. 13 delamran cis 4096 Oct  4 18:00 ..
+drwxr-xr-x.  7 delamran cis 4096 Oct  4 18:00 .git
+[delamran@sol28 Repo1]$ ls .
+[delamran@sol28 Repo1]$ ls
+[delamran@sol28 Repo1]$ cd ..
+[delamran@sol28 ~]$ cd example
+[delamran@sol28 example]$ ls
+HelloWorld.class  HelloWorld.java  myscript.sh
+[delamran@sol28 example]$ cp HelloWorld.java delamran/Repo1
+cp: cannot create regular file ‘delamran/Repo1’: No such file or directory
+[delamran@sol28 example]$ cp HelloWorld.java /delamran/Repo1/
+cp: cannot create regular file ‘/delamran/Repo1/’: No such file or directory
+[delamran@sol28 example]$ cp HelloWorld.java ..
+[delamran@sol28 example]$ ls
+HelloWorld.class  HelloWorld.java  myscript.sh
+[delamran@sol28 example]$ cd ..
+[delamran@sol28 ~]$ ls
+example          MyCalendars   scriptForTop20song.sh  top20songs.csv
+HelloWorld.java  myscript.exe  songs.csv
+imageFolder      public_html   songsReport.csv
+log              Repo1         top20songs1.csv
+[delamran@sol28 ~]$ mv HelloWorld.java Repo1
+[delamran@sol28 ~]$ ls
+example      MyCalendars   Repo1                  songsReport.csv
+imageFolder  myscript.exe  scriptForTop20song.sh  top20songs1.csv
+log          public_html   songs.csv              top20songs.csv
+[delamran@sol28 ~]$ cd Repo1
+[delamran@sol28 Repo1]$ ls
+HelloWorld.java
+[delamran@sol28 Repo1]$ git add HelloWorld.java
+[delamran@sol28 Repo1]$ vim HelloWorld.java
+[delamran@sol28 Repo1]$ ls
+HelloWorld.java
+[delamran@sol28 Repo1]$ git commit -m "added todays date to hello world file"
+[master (root-commit) 8a3ab5a] added todays date to hello world file
+ 1 file changed, 7 insertions(+)
+ create mode 100755 HelloWorld.java
+[delamran@sol28 Repo1]$ cd ..
+[delamran@sol28 ~]$ ls
+example      MyCalendars   Repo1                  songsReport.csv
+imageFolder  myscript.exe  scriptForTop20song.sh  top20songs1.csv
+log          public_html   songs.csv              top20songs.csv
+[delamran@sol28 ~]$ ls
+example      MyCalendars   Repo1                  songsReport.csv
+imageFolder  myscript.exe  scriptForTop20song.sh  top20songs1.csv
+log          public_html   songs.csv              top20songs.csv
+[delamran@sol28 ~]$ git pull
+fatal: Not a git repository (or any parent up to mount point /users1)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[delamran@sol28 ~]$ git pull https://github.com/DanielElamrani/RepoMeta.git
+fatal: Not a git repository (or any parent up to mount point /users1)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[delamran@sol28 ~]$ mkdir RepoMeta
+[delamran@sol28 ~]$ ls
+example      myscript.exe  scriptForTop20song.sh  top20songs.csv
+imageFolder  public_html   songs.csv
+log          Repo1         songsReport.csv
+MyCalendars  RepoMeta      top20songs1.csv
+[delamran@sol28 ~]$ cd RepoMeta
+[delamran@sol28 RepoMeta]$ ls
+[delamran@sol28 RepoMeta]$ git pull https://github.com/DanielElamrani/RepoMeta.git
+fatal: Not a git repository (or any parent up to mount point /users1)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[delamran@sol28 RepoMeta]$ ls
+[delamran@sol28 RepoMeta]$ git init
+Initialized empty Git repository in /users1/st/delamran/RepoMeta/.git/
+[delamran@sol28 RepoMeta]$ git remote add origin https://github.com/DanielElamrani/RepoMeta.git
+[delamran@sol28 RepoMeta]$ remote -v
+bash: remote: command not found...
+[delamran@sol28 RepoMeta]$ git pull
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/DanielElamrani/RepoMeta
+ * [new branch]      main       -> origin/main
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+[delamran@sol28 RepoMeta]$
+
