@@ -1,0 +1,41 @@
+
+[delamran@sol28 ~]$ ls
+example          log           public_html  RepoMeta               songsReport.csv
+HelloWorld.java  MyCalendars   Repo1        scriptForTop20song.sh  top20songs1.csv
+imageFolder      myscript.exe  Repo2        songs.csv              top20songs.csv
+[delamran@sol28 ~]$ mkdir repoB
+[delamran@sol28 ~]$ cd repoB
+[delamran@sol28 repoB]$ svnadmin create .
+[delamran@sol28 repoB]$ svn co https://github.com/DanielElamrani/repoB.git .
+Checked out revision 0.
+[delamran@sol28 repoB]$ mkdir trunk
+[delamran@sol28 repoB]$ cd trunk
+[delamran@sol28 trunk]$ touch fileToTrack.txt
+[delamran@sol28 trunk]$ vim fileToTrack.txt
+[delamran@sol28 trunk]$ cd ..
+[delamran@sol28 repoB]$ svn add trunk
+A         trunk
+A         trunk/fileToTrack.txt
+[delamran@sol28 repoB]$ svn commit -m "committing edited file"
+Authentication realm: <https://github.com:443> GitHub
+Password for 'danielelamrani@gmail.com':
+
+-----------------------------------------------------------------------
+ATTENTION!  Your password for authentication realm:
+
+   <https://github.com:443> GitHub
+
+can only be stored to disk unencrypted!  You are advised to configure
+your system so that Subversion can store passwords encrypted, if
+possible.  See the documentation for details.
+
+You can avoid future appearances of this warning by setting the value
+of the 'store-plaintext-passwords' option to either 'yes' or 'no' in
+'/users1/st/delamran/.subversion/servers'.
+-----------------------------------------------------------------------
+Store password unencrypted (yes/no)? no
+Adding         trunk
+Adding         trunk/fileToTrack.txt
+Transmitting file data .
+Committed revision 1.
+[delamran@sol28 repoB]$
